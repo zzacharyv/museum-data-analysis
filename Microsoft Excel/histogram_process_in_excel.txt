@@ -1,0 +1,11 @@
+1. Install odbc
+2. Install ansi driver
+3. Connect sql server to odbc
+4. Load database to excel from odbc import option
+5. Create bins (intervals) for the histogram, I did a linear interval of 9
+6. Count how many values fit between each of the intervals:
+	i. select cells adjacent to bins column
+	ii. enter edit mode
+	iii. =FREQUENCY(D2:D975,F2:F202) 
+7. Highlight the bins column and frequency data column, insert scatter plot, change chart to bar graph
+8. Style chart

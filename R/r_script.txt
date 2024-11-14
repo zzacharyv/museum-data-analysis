@@ -1,0 +1,57 @@
+
+> library(RMySQL)
+Loading required package: DBI
+> library(dplyr)
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+> con = dbConnect(RMySQL::MySQL(),dbname='artic',host='localhost',port=3306,user='user',password='password')
+> dbListTables(con)
+[1] "landscapes" "suppliers" 
+> landscapes_data = dbReadTable(con,"landscapes")
+> head(landscapes_data, 5)
+    ID
+1  138
+2  869
+3  879
+4 2111
+5 2114
+                                                                       TITLE
+1                                                     Flower Girl in Holland
+2                                      The Watermill with the Great Red Roof
+3                                                       Landscape (The Lock)
+4 Frontispiece, to Mr. Constable's English Landscape, East Bergholt, Suffolk
+5                                                                     Spring
+      ARTIST_TITLE DATE_END
+1 George Hitchcock     1887
+2 Meindert Hobbema     1675
+3   John Constable     1830
+4      David Lucas     1830
+5      David Lucas     1830
+> library(dplyr)
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+> clean_data <- landscapes_data %>% filter(DATE_END < 0)
+> png('my_plot.png')
+> hist(clean_data$DATE_END, breaks=500, freq=TRUE, ylim=c(0,170), xlim=c(400,2100), xaxt="n", main="Distribution of Landscape Artworks by Year Completed", xlab="Year Artwork Completed", col="blue")
+> axis(side=1, at=15*(25:142))
+> dev.off()
+windows 
+      2 
+> 
