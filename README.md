@@ -12,13 +12,13 @@ This project harnessed The Art Institute of Chicago's extensive database to reve
 The Museum Data Analysis project utilizes the Art Institute of Chicago's API to collect and analyze data, revealing hidden trends and patterns within the museum's collections. This project showcases the power of data analysis in transforming raw data into insightful visualizations.
 
 ## Features
-- **Data Collection**: Efficiently gathers data from the Art Institute of Chicago's API.
+- **Data Collection**: Efficiently gathers data from the Art Institute of Chicago's API, using Java.
 - **Data Storage**: Stores collected data in a local SQL server.
 - **Data Visualization**: Uses Microsoft Excel, Python with matplotlib, and R for comprehensive data visualizations.
 - **Trend Analysis**: Reveals and visualizes intriguing patterns and connections within the museum's collections.
 
 ## Data Gathering
-Data was gathered from the Art Institute of Chicago Public API:
+Data was gathered from the Art Institute of Chicago Public API and using Java to handle the logic:
 
 [Art Institute of Chicago Public API](https://api.artic.edu/docs/)
 
